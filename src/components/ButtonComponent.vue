@@ -1,5 +1,5 @@
 <template>
-  <a :href="url" :class="['btn', variantClass]" target="_blank" rel="noopener noreferrer">
+  <a :href="url" :class="['btn', variantClass]" target="_blank" rel="noopener noreferrer" @click="clickHandler">
     <slot>TitleSample</slot> <!-- Default slot content -->
   </a>
 </template>
@@ -25,44 +25,40 @@ export default {
   },
   methods: {
     clickHandler(event) {
-      if (this.url.startsWith('#')) {
+      if (this.url === '#') {
         event.preventDefault(); // Prevent default if the URL is not set
       }
-      this.$emit('click'); // Emit click event for the parent component to handle if necessary
+      this.$emit('click', event); // Emit click event with the event for more control
     }
   }
 };
 </script>
 
-
 <style scoped>
-a.btn {
-  font-family: 'Jost', sans-serif; /* Ensure Jost font is imported in your project */
-  font-weight: 600; /* semibold */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
   font-size: 16px;
-   /* Adjusted sizes */
-  padding: 0.5rem 1rem; /* Provides padding inside the button */
-  border: none; /* Removes border if not needed */
-  border-radius: 10px; /* Optional: adds rounded corners */
-  cursor: pointer; /* Changes cursor to pointer on hover */
-  width:420px;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%; /* Make button width responsive */
+  max-width: 420px; /* Maximum width */
   height: 52px;
-  background-color: #292F36;
+  background-color: #CDA274;
+  color: #FFFFFF; /* Ensure text color is white */
+  text-decoration: none; /* Remove underline from links */
 
-}
-a.btn:hover {
-  background-color: #1F2429; /* Example: darken button on hover */
-  color: #FFFFFF; /* Change text color on hover */
-}
-@media (max-width: 768px) {
-  .button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  .link-box {
-    padding: 1rem;
-  }
+  
 }
 
-
+.btn:hover {
+  color:#CDA274;
+  background-color: #F4F0EC;
+  box-shadow: 0px 0px 20px 0px rgba(205, 162, 116, 0.50);
+}
 </style>

@@ -1,11 +1,11 @@
 
 
 <template>
-
-  <div id="app">
-  
+<div>
+  <img src="@/assets/GalstianLogo.png" id="LogoGal">
+</div>
   <LinkBox/>
-  </div>
+
 </template>
 
 <script>
@@ -20,13 +20,16 @@ export default {
 </script>
 
 <style>
-h1 {
-    display: flex;
-    color: #FFFFFF;
+
+#LogoGal {
+  width: 15em;
+  height: auto; /* Set a fixed height */
+  object-fit: cover; /* Cover the container without losing aspect ratio */
 }
+
 #app {
       display: flex;
-      padding-top: 19.148px;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       flex-shrink: 0;
@@ -38,12 +41,13 @@ h1 {
   /* Existing styles */
   background-repeat: no-repeat;
   background-attachment: fixed;
+  gap: 15rem; /* Adjust the gap between buttons as needed */
 }
 
     }
 .buttons-column {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Adjust the gap between buttons as needed */
+
 }
 </style>

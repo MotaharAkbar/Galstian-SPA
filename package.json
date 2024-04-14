@@ -1,0 +1,27 @@
+{
+  "name": "galstian-spa",
+  "version": "1.0.0",
+  "description": "Single Page Application For Galstian",
+  "main": "vue.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MotaharAkbar/Galstian-SPA.git"
+  },
+  "author": "Motahar Akbar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MotaharAkbar/Galstian-SPA/issues"
+  },
+  "homepage": "https://github.com/MotaharAkbar/Galstian-SPA#readme",
+  "dependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "vuex": "^4.1.0"
+  }
+}
